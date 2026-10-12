@@ -9,9 +9,10 @@ package MasterMind;
 public class GameBoard {
 
     private int[][] $board;
-    private int $ROWS; // The amount of rows we have
-    private int $COLS; // the amount of cols we have
+    public final int ROWS; // The amount of rows we have
+    public final int COLS; // the amount of cols we have
     private int $ColorAmount; // the amount of colors we can play with
+    private int $nextRow; // the next guessing row
 
     /**
      * Constructor of the GameBoard
@@ -28,12 +29,12 @@ public class GameBoard {
      *
      */
     public GameBoard(int rows, int cols, int ColorAmount) {
-        if(rows <= 0 || cols <= 0 || ColorAmount <= 0)
+        if (rows <= 0 || cols <= 0 || ColorAmount <= 0)
             throw new IllegalArgumentException("Ongeldige GameBoard");
         this.$ROWS = rows;
         this.$COLS = cols;
         this.$ColorAmount = ColorAmount;
-        this.$board = new int[$ROWS][$COLS];
+        this.$board = new int[ROWS][COLS];
     }
 
     /**
@@ -43,7 +44,7 @@ public class GameBoard {
      * @post the board remains unchanged
      */
     public int getRows() {
-        return $ROWS;
+        return ROWS;
     }
 
     /**
@@ -53,7 +54,7 @@ public class GameBoard {
      * @post board remains unchanged
      */
     public int getCols() {
-        return $COLS;
+        return COLS;
     }
 
     /**
@@ -64,6 +65,16 @@ public class GameBoard {
      */
     public int getColorAmount() {
         return $ColorAmount;
+    }
+
+    /**
+     * Inspector for $nextRow;
+     *
+     * @return $nextRow
+     * @post board remains unchanged
+     */
+    public int getNextRow() {
+        return $nextRow;
     }
 
 }
