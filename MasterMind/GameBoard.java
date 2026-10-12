@@ -28,6 +28,8 @@ public class GameBoard {
      *
      */
     public GameBoard(int rows, int cols, int ColorAmount) {
+        if(rows <= 0 || cols <= 0 || ColorAmount <= 0)
+            throw new IllegalArgumentException("Ongeldige GameBoard");
         this.$ROWS = rows;
         this.$COLS = cols;
         this.$ColorAmount = ColorAmount;

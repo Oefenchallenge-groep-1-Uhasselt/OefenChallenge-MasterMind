@@ -1,5 +1,8 @@
 package MasterMind;
-
+/**
+ * @author groep 1
+ * CodeRenderer
+ */
 public class CodeRenderer {
 
     /**

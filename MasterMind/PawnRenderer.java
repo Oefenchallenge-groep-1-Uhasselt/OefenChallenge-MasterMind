@@ -5,6 +5,8 @@ package MasterMind;
  * 
  * Deze klasse bewaart 1 method die ervoor zorgt dat pawns van hun getalvorm omgezet worden tot een string met de beginletter van de kleur die ze hebben.
  * indien de getalwaarde boven 6 ligt, dan returnen we gewoon een string van datzelfde getal.  
+ * 
+ * @author groep 1
 **/
 public class PawnRenderer {
     /**
@@ -20,7 +22,7 @@ public class PawnRenderer {
         if(pawn <= 0){
             throw new IllegalArgumentException("pawn can not be negative");
         }
-        
+
         switch (pawn) {             
             case 1:                 
                 return "R"; // rood             
