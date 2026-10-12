@@ -15,15 +15,15 @@ public interface ParticipantVisitor {
      * @post participant is unchanged
      * @post The corresponding method is called
      */
-    void visitHuman(GameParticipant participant);
+    void visitHuman(Human human);
 
     /**
      * Visitor for the bot
-     * 
+     *
      * @pre participant != null
      * @param participant
      * @post participant is unchanged
      * @post The corresponding method is called
      */
-    void visitBot(GameParticipant participant);
+    void visitBot(Bot bot);
 }

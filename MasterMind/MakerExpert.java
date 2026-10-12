@@ -46,11 +46,11 @@ public class MakerExpert implements ParticipantVisitor {
      * @post bot remains unchanged
      * @post result = $returnArray
      */
-    public int[] visitBot(Bot bot) {
+    @Override
+    public void visitBot(Bot bot) {
         for (int i = 0; i < $board.getColorAmount(); i++) {
             $returnArray[i] = getNextBotCell(bot.getStrat());
         }
-        return $returnArray;
     }
 
     /**
@@ -76,10 +76,21 @@ public class MakerExpert implements ParticipantVisitor {
      * @post result = $returnArray
      * @post human remains unchanged
      */
-    public int[] visitHuman(Human human) {
+    @Override
+    public void visitHuman(Human human) {
         for (int i = 0; i < $board.getColorAmount(); i++) {
             $returnArray[i] = getNextCell();
         }
+    }
+
+    /**
+     * Inspector for $returnArray
+     *
+     * @pre a move has been done
+     * @return $returnArray
+     * @post MakerExpert remains unchanged
+     */
+    public int[] getNextMove() {
         return $returnArray;
     }
 }
