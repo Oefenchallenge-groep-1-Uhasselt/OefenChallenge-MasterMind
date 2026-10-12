@@ -1,5 +1,3 @@
 package MasterMind;
 
-public class Bot implements GameParticipant {
-
-}
+public class Bot implements GameParticipant {}

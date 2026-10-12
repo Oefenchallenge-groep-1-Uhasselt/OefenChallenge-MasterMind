@@ -13,5 +13,5 @@ public interface GameParticipant {
      * @post visitor's visit method for this participant's type is called once.
      * @post the participant is unchanged
      */
-    void accept(ParticipantVisitor visitor);
+    public void accept(ParticipantVisitor visitor);
 }
