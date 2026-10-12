@@ -15,7 +15,7 @@ public class PawnRenderer {
      * @return pawn or Char
      */
     // method die Integer-representatie van pion omzet naar String-representatie
-    public static String RenderPawn(Integer pawn) {  
+    public String RenderPawn(Integer pawn) {  
         if(pawn == null){
             throw new IllegalArgumentException("pawn can not be null");
         }       
@@ -39,6 +39,31 @@ public class PawnRenderer {
             default:                 
                 return String.valueOf(pawn);         
         }     
-    }      
+    }  
+    
+    /**
+     * @pre pawn != null
+     * 
+     * @param pawn
+     * @return Integer
+     */
+    public Integer ResolvePawn(String pawn) {
+        switch (pawn) {
+            case "R":
+                return 1;
+            case "B":
+                return 2;
+            case "Y":
+                return 3;
+            case "G":
+                return 4;
+            case "O":
+                return 5;
+            case "P":
+                return 6;
+            default:
+                return Integer.parseInt(pawn);
+        }
+    }
 }
 
