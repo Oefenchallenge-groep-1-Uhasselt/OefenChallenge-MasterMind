@@ -14,7 +14,7 @@ class StrategyFactory {
         if("bot Move".equals(name)){
             return new BotStrategy();
         }else if("player Move".equals(name)){
-            return new PlayerStrategy();
+            return new PlayerStrategy(input);
         }else{
             throw new IllegalArgumentException("Niet gekende strategy" + name);
         }
