@@ -1,3 +1,4 @@
+
 package MasterMind;
 
 /**
@@ -29,8 +30,6 @@ public class GameBoard {
      *
      */
     public GameBoard(int rows, int cols, int ColorAmount) {
-        if (rows <= 0 || cols <= 0 || ColorAmount <= 0)
-            throw new IllegalArgumentException("Ongeldige GameBoard");
         this.$ROWS = rows;
         this.$COLS = cols;
         this.$ColorAmount = ColorAmount;
@@ -67,29 +66,24 @@ public class GameBoard {
         return $ColorAmount;
     }
 
-    /**
-     * Inspector for $nextRow;
-     *
-     * @return $nextRow
-     * @post board remains unchanged
-     */
-    public int getNextRow() {
-        return $nextRow;
+    public boolean acceptMove(int[] move) {
+        if(isValidCode(move)) {
+            return true;
+        }
+        return false;
     }
 
-    /**
-     * increments the next guessing row;
-     *
-     * @return
-     * @post $nextRow == $nextRow+1
-     * @post returns true if it's a valid row and false if it's not.
-     */
-    public boolean incrementNextRow() {
-        $nextRow++;
-        if ($nextRow >= $ROWS) {
-            return false;
+    private boolean isValidCode(int[] move) {
+        int moveLength = move.length;
+        for(int pawnIndex = 0; pawnIndex < moveLength; pawnIndex++){
+            if(!isValidPawn(move[pawnIndex])) {
+                return false;
+            }
         }
         return true;
     }
 
+    private boolean isValidPawn(int pawn) {
+        return pawn > 0 && pawn < $ColorAmount;
+    }
 }
