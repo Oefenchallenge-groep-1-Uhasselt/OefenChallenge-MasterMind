@@ -1,5 +1,8 @@
 package MasterMind;
 
+/**
+ * @author groep 1
+ */
 interface  Strategy {
-    public int eval(MasterMind masterMind);
+    public int eval(GameBoard gameboard);
 }
