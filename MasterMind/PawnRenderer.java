@@ -9,7 +9,7 @@ package MasterMind;
 public class PawnRenderer {
     
     // method die Integer-representatie van pion omzet naar String-representatie
-    public String RenderPawn(Integer pawn) {         
+    public static String RenderPawn(Integer pawn) {         
         switch (pawn) {             
             case 1:                 
                 return "R"; // rood             
