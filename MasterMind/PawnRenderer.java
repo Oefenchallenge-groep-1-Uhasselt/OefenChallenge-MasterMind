@@ -7,9 +7,20 @@ package MasterMind;
  * indien de getalwaarde boven 6 ligt, dan returnen we gewoon een string van datzelfde getal.  
 **/
 public class PawnRenderer {
-    
+    /**
+     * @pre pawn != null
+     * @pre pawn > 0
+     * @return pawn or Char
+     */
     // method die Integer-representatie van pion omzet naar String-representatie
-    public static String RenderPawn(Integer pawn) {         
+    public static String RenderPawn(Integer pawn) {  
+        if(pawn == null){
+            throw new IllegalArgumentException("pawn can not be null");
+        }       
+        if(pawn <= 0){
+            throw new IllegalArgumentException("pawn can not be negative");
+        }
+        
         switch (pawn) {             
             case 1:                 
                 return "R"; // rood             
