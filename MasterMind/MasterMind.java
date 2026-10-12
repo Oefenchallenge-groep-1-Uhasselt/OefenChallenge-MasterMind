@@ -34,4 +34,41 @@ public class MasterMind {
         }
     }
 
+    public void run() {
+        // main game-loop
+
+        boolean stopProgram = false;
+        while(!stopProgram) {
+            boolean PVPmode = askYNquestion("PVP?");
+            if(PVPmode) { // 1v1 maker vs breaker
+                // hier voert de human vs human code zich uit
+            }
+            else { // 1ve
+                boolean HumanIsBreaker = askYNquestion("Breaker zijn?");
+                if(HumanIsBreaker) { 
+                    // hier voert de human vs bot code zich uit
+                }
+                else{
+                    // hier voert de bot vs hum code zich uit
+                }
+            }
+        }
+    }
+
+    private boolean askYNquestion(String prompt) {
+        while (true) {
+            String answer = System.console().readLine("%s (Y/N): ", prompt);
+
+            if (answer.equalsIgnoreCase("Y")) {
+                return true;
+            }
+
+            if (answer.equalsIgnoreCase("N")) {
+                return false;
+            }
+
+            System.out.println("Invalid input. Please enter Y or N.");
+        }
+    }
+
 }
