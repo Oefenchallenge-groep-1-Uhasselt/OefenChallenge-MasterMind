@@ -12,9 +12,9 @@ class StrategyFactory {
             throw new IllegalArgumentException("name can not be null");
         }
         if("bot Move".equals(name)){
-            return new BotStrategy();
+            return new CheckStrategy(new BotStrategy());
         }else if("player Move".equals(name)){
-            return new PlayerStrategy(input);
+            return new CheckStrategy(new PlayerStrategy());
         }else{
             throw new IllegalArgumentException("Niet gekende strategy" + name);
         }
