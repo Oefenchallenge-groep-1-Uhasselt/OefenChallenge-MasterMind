@@ -1,5 +1,10 @@
 package MasterMind;
 
+/**
+ * @author groep1
+ * MasterMind
+ */
+
 public class MasterMind {
     private static MasterMind instantie;
 
