@@ -9,11 +9,9 @@ package MasterMind;
 public interface GameParticipant {
 
     /**
-     * The function that returns a candidate move for the next row
-     *
-     * @param board
-     * @return int[] with the numerical values of the colors
-     * @post board remains unchanged
+     * @pre visitor != null
+     * @post visitor's visit method for this participant's type is called once.
+     * @post the participant is unchanged
      */
-    int chooseMove(GameBoard board);
+    void accept(ParticipantVisitor visitor);
 }
