@@ -9,8 +9,8 @@ package MasterMind;
 public class GameBoard {
 
     private int[][] $board;
-    private int $ROWS; // The amount of rows we have
-    private int $COLS; // the amount of cols we have
+    public final int ROWS; // The amount of rows we have
+    public final int COLS; // the amount of cols we have
     private int $ColorAmount; // the amount of colors we can play with
     private int $nextRow; // the next guessing row
 
@@ -29,10 +29,10 @@ public class GameBoard {
      *
      */
     public GameBoard(int rows, int cols, int ColorAmount) {
-        this.$ROWS = rows;
-        this.$COLS = cols;
+        this.ROWS = rows;
+        this.COLS = cols;
         this.$ColorAmount = ColorAmount;
-        this.$board = new int[$ROWS][$COLS];
+        this.$board = new int[ROWS][COLS];
     }
 
     /**
@@ -42,7 +42,7 @@ public class GameBoard {
      * @post the board remains unchanged
      */
     public int getRows() {
-        return $ROWS;
+        return ROWS;
     }
 
     /**
@@ -52,7 +52,7 @@ public class GameBoard {
      * @post board remains unchanged
      */
     public int getCols() {
-        return $COLS;
+        return COLS;
     }
 
     /**
