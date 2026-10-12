@@ -20,9 +20,10 @@ public class CodeRenderer {
         }
         int codeLength = code.length;
         String[] codeString = new String[codeLength];
+        PawnRenderer pawnRenderer = new PawnRenderer();
 
         for(int codeIndex = 0; codeIndex < codeLength; codeIndex++) {
-            codeString[codeIndex] = PawnRenderer.RenderPawn(code[codeIndex]);
+            codeString[codeIndex] = pawnRenderer.RenderPawn(code[codeIndex]);
         }
 
         return codeString;
