@@ -8,8 +8,22 @@ package MasterMind;
  */
 public class BreakerExpert implements ParticipantVisitor {
 
+    private GameBoard $board;
     private PawnRenderer $renderer = new PawnRenderer();
-    private int[] $returnArray = new int[GameBoard.COLS];
+    private int[] $returnArray;
+
+    /**
+     * Constructor for the BreakerExpert
+     *
+     * @pre board != null;
+     * @param board
+     * @post $board == board;
+     *
+     */
+    public BreakerExpert(GameBoard board) {
+        this.$board = board;
+        $returnArray = new int[$board.getCols()];
+    }
 
     /**
      * the visitor function for the human codebreaker
@@ -21,14 +35,14 @@ public class BreakerExpert implements ParticipantVisitor {
      * @post human remains unchanged
      */
     public int[] visitHuman(Human human) {
-        for (int i = 0; i < GameBoard.$ColorAmount; i++) {
+        for (int i = 0; i < $board.getColorAmount(); i++) {
             $returnArray[i] = getNextCell();
         }
         return $returnArray;
     }
 
     /**
-     * The function that get's the next cell and returns it as an int
+     * The function that gets the next cell and returns it as an int
      *
      * @pre $renderer != null
      * @return int
@@ -38,10 +52,33 @@ public class BreakerExpert implements ParticipantVisitor {
     private int getNextCell() {
         System.out.print("Enter a color for the next cell: ");
         String inputColor = System.console().readLine();
-        return $renderer.resolve(inputColor);
+        return $renderer.ResolvePawn(inputColor);
     }
 
-    public int[] visitBot(Bot bot) {
+    /**
+     * The function that gets the next cell from the bot according to its strategy and returns it
+     * 
+     * @pre botstrat != null
+     * @param botstrat
+     * @post bot remains unchanged
+     * @post result == botstrat.doMove();
+     */
+    private int getNextBotCell(Strategy botstrat) {
+        return botstrat.doMove();
+    }
 
+    /**
+     * Visitor function for our Bot player
+     *
+     * @pre bot != null
+     * @param bot
+     * @post bot remains unchanged
+     * @post result = $returnArray
+     */
+    public int[] visitBot(Bot bot) {
+        for (int i = 0; i < $board.getColorAmount(); i++) {
+            $returnArray[i] = getNextBotCell(bot.getStrat());
+        }
+        return $returnArray;
     }
 }
