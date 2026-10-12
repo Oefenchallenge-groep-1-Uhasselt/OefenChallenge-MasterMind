@@ -44,4 +44,8 @@ public class GameSetupBuilder {
         this.MaxAttemps = MaxAttemps;
         return this;
     }
+
+    public GameSetup build(){
+        return new GameSetup(colorAmount, codeLength, MaxAttemps);
+    }
 }
