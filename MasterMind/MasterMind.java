@@ -24,4 +24,14 @@ public class MasterMind {
         }
         return instantie;
     }
+
+    public static void main(String[] args) {
+        try {
+            getInstance().run();
+        } catch (java.io.UncheckedIOException e) {
+            System.out.println();
+            System.out.println("Input closed, goodbye.");
+        }
+    }
+
 }
