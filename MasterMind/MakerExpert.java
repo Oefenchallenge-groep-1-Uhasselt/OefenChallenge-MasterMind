@@ -1,11 +1,11 @@
 package MasterMind;
 
 public class MakerExpert implements ParticipantVisitor{
-    public int[] visit(Human) {
+    public int[] visitBot(Human human) {
 
     }
 
-    public int[] visit(Bot) {
-        
+    public int[] visitHuman(Bot bot) {
+
     }
 }

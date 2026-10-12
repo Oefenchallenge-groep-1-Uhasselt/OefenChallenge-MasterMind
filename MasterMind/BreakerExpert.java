@@ -1,11 +1,11 @@
 package MasterMind;
 
 public class BreakerExpert implements ParticipantVisitor {
-    public int[] visit(Human) {
+    public int[] visitHuman(Human human) {
 
     }
 
-    public int[] visit(Bot) {
+    public int[] visitBot(Bot bot) {
         
     }
 }
