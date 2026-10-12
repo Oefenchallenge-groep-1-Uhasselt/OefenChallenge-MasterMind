@@ -12,6 +12,7 @@ public class GameBoard {
     private int $ROWS; // The amount of rows we have
     private int $COLS; // the amount of cols we have
     private int $ColorAmount; // the amount of colors we can play with
+    private int $nextRow; // the next guessing row
 
     /**
      * Constructor of the GameBoard
@@ -62,6 +63,16 @@ public class GameBoard {
      */
     public int getColorAmount() {
         return $ColorAmount;
+    }
+
+    /**
+     * Inspector for $nextRow;
+     *
+     * @return $nextRow
+     * @post board remains unchanged
+     */
+    public int getNextRow() {
+        return $nextRow;
     }
 
 }
